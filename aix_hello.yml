@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: execute oslevel -s
+      command: oslevel -s
+      register: oslevel
+    - debug: msg="{{ oslevel.stdout }}"
